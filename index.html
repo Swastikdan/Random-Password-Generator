@@ -424,7 +424,7 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/service-worker.js')
                 .then(registration => {
-                    console.log('Service Worker registered:', registration);
+                    
         
                     navigator.serviceWorker.addEventListener('message', event => {
                         if (event.data && event.data.type === 'RELOAD_PAGE') {
