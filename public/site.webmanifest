@@ -1,0 +1,31 @@
+{
+    "short_name": "Password Generator",
+    "name": "Random Password Generator",
+    "icons": [
+      {
+        "src": "/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "standalone",
+    "orientation": "portrait",
+    "description": "Generate strong & secure passwords for all your online accounts with our random password generator. Mix letters, numbers and symbols for the ultimate in security.",
+    "categories": ["password", "security","secure passwords","password generator","random password generator"],
+    "lang": "en-US",
+    "serviceworker": {
+        "src": "/service-worker.js",
+        "scope": "/"
+    }
+    
+
+  }
+  

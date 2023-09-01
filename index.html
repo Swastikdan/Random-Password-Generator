@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator | Create Strong Passwords</title>
+    <meta content="Generate strong & secure passwords for all your online accounts with our random password generator. Mix letters, numbers and symbols for the ultimate in security." name="Description" />
+    <meta content="password generator, random password generator, password generator online, password generator tool, password generator free, password generator strong, password generator secure, password generator random ,password, security, secure passwords, password generator, random password generator, password manager, password generator online, password generator app, password generator free, password generator strong, password generator secure, password generator random, password generator easy, password generator simple, password generator best, password generator safe, password generator strong online, password generator secure online, password generator random online, password generator easy online, password generator simple online, password generator best online, password generator safe online, password generator strong app, password generator secure app, password generator random app, password generator easy app, password generator simple app, password generator best app, password generator safe app, password generator strong free, password generator secure free, password generator random free, password generator easy free, password generator simple free, password generator best free, password generator safe free, password generator strong password, password generator secure password, password generator random password, password generator easy password, password generator simple password, password generator best password, password generator safe password, password generator strong password online, password generator secure password online, password generator random password online, password generator easy password online, password generator simple password online, password generator best password online, password generator safe password online, password generator strong password app, password generator secure password app, password generator random password app, password generator easy password app, password generator simple password app, password generator best password app, password generator safe password app, password generator strong password free, password generator secure password free, password generator random password free, password generator easy password free, password generator simple password free, password generator best password free, password generator safe password free, password generator strong password manager, password generator secure password manager, password generator random password manager, password generator easy password manager, password generator simple password manager, password generator best password manager, password generator safe password manager, password generator strong password manager online, password generator secure password manager online, password generator random password manager online, password generator easy password manager online, password generator simple password manager online, password generator best password manager online, password generator safe password manager online, password generator strong password manager app, password generator secure password manager app, password generator random password manager app, password generator easy password manager app, password generator simple password manager app, password generator best password manager app, password generator safe password manager app, password generator strong password manager free, password generator secure password manager free, password generator random password manager free, password generator easy password manager free, password generator simple password manager free, password generator best password manager free, password generator safe password manager free, password " name="keywords" />
+    <meta property="og:title" content="Random Password Generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="https://ik.imagekit.io/swastik/Random%20Password%20Generator_bgfvEQNwJ.png">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="en">
+    <meta name="author" content="Swastik Dan">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="robots" content="noodp ">
+    <link rel="alternate" hreflang="en" href="">
+    <link rel="shortcut icon" href="/apple-touch-icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-black h-full mx-auto space-grotesk">
+    <section class="-mt-px border-y border-gray-900 bg-gray-800 text-white">
+      <div class="mx-auto max-w-screen-xl px-4 py-1.5">
+        <a href="https://github.com/Swastikdan/Password-Generator" rel="noreferrer" target="_blank" class="flex items-center justify-center gap-1.5 transition hover:opacity-75">
+          <span class="text-sm/tight font-medium">Enjoy This? Give it a star on GitHub</span>
+          <span aria-hidden="true" role="img">🎉</span>
+        </a>
+      </div>
+    </section>
+    <main role="main" class="relative max-w-5xl px-4 sm:px-6 lg:px-8 py-28 flex flex-col justify-center sm:items-center mx-auto w-full h-full before:absolute before:top-0 before:left-1/2 before:bg-[url('squared-bg-element-dark.svg')] before:bg-no-repeat before:bg-top before:w-full before:h-full before:-z-[1] before:transform before:-translate-x-1/2">
+      <div class="text-center -mt-20 md:-mt-0 px-4 sm:px-6 lg:px-8 ">
+        <h1 class="mb-1 sm:mb-3 text-3xl font-bold text-white sm:text-6xl">
+          <span class="bg-clip-text bg-gradient-to-tr from-blue-600 to-purple-400 text-transparent">Random Password Generator</span>
+        </h1>
+        <h2 class="text-md text-white sm:text-xl my-10"> Create strong and secure passwords to keep your account safe online. </h2>
+        <textarea hidden id="password" rows="3" cols="50" readonly></textarea>
+        <div class="mt-8 space-y-4">
+          <div class="relative flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 items-center h-full">
+            <div class="password-div py-3 px-2 md:px-8 w-full bg-white/[.1] text-white placeholder:text-white rounded-xl text-sm ring-1 border-white ring-white items-center flex justify-between">
+              <span id="partialPassword" class="text-start text-sm sm:text-base md:text-md lg:text-xl" readonly></span>
+              <div class="two flex space-x-4 items-center">
+                <div id="passwordStrength"></div>
+                <button id="generate" class="transition-all">
+                  <svg id="svg" width="30" height="29" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.63281 4.784L6.13281 10.0715M6.13281 10.0715L11.5703 8.72148M6.13281 10.0715C6.90865 6.7741 9.97956 4.52148 13.3327 4.52148C17.442 4.52148 20.8327 7.90899 20.8327 12.0215C20.8327 16.1076 17.4189 19.5214 13.3327 19.5214C9.9468 19.5214 6.81208 17.1532 6.05773 13.8214" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button id="copy" class="py-5 md:py-4 px-8 inline-flex justify-center items-center rounded-xl bg-white/10 border border-transparent font-medium text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all text-sm md:text-base"> Copy </button>
+          </div>
+          <div class="slider-div flex flex-col md:flex-row md:justify-between space-y-5 md:space-y-0 items-center w-full pt-5 md:pt-10">
+            <div class="password-length-text text-center flex flex-col md:flex-row gap-2 text-xl text-white">
+              <label for="length" class="">Password Length:</label>
+              <span id="lengthValue" class="ml-3">16</span>
+            </div>
+            <div id="lengthButtons" class="flex items-center space-x-4 w-full md:max-w-[65%]">
+              <button id="decreaseLength" class="rounded-xl bg-white/10 border border-transparent font-bold text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all px-3 py-2 ">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M6 12L18 12" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+              </button>
+              <input type="range" id="length" min="1" max="50" value="10" class="w-full h-1 bg-white/30 rounded-lg appearance-none cursor-pointer range-lg dark:bg-gray-700" style="
+                  --thumb-bg-color: #4e97ff;
+                  --track-bg-color: #a0aec0;
+                  --progress-bg-color: #4299e1;
+                " />
+              <button id="increaseLength" class="rounded-xl bg-white/10 border border-transparent font-bold text-white hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/30 transition-all px-3 py-2 ">
+                <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M6 12H18M12 6V18" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="charracters-used flex flex-col md:flex-row md:space-x-10 space-y-5 md:space-y-0 items-center w-full px-4 sm:px-6 lg:px-8 pt-5 md:pt-10 mx-auto justify-center">
+            <span class="text-xl text-white">Characters used:</span>
+            <div class="diffrent-cahrracters flex text-xl font-bold">
+              <ul class="flex space-x-3 md:space-x-5">
+                <div>
+                  <input type="checkbox" id="includeUppercase" class="hidden peer" />
+                  <label for="includeUppercase" class="inline-flex items-center justify-between w-full px-4 py-1 border-2 border-gray-200 rounded-lg cursor-pointer hover:text-gray-300 dark:border-gray-700 peer-checked:border-white peer-checked:text-gray-300 peer-checked:bg-green-600 text-gray-400 bg-white/10 hover:bg-gray-700">
+                    <div class="block">
+                      <div class="w-full text-xl font-semibold">ABC</div>
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="includeLowercase" class="hidden peer" checked />
+                  <label for="includeLowercase" class="inline-flex items-center justify-between w-full px-4 py-1 border-2 border-gray-200 rounded-lg cursor-pointer hover:text-gray-300 dark:border-gray-700 peer-checked:border-white peer-checked:text-gray-300 peer-checked:bg-green-600 text-gray-400 bg-white/10 hover:bg-gray-700">
+                    <div class="block">
+                      <div class="w-full text-xl font-semibold">abc</div>
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="includeNumbers" class="hidden peer" checked />
+                  <label for="includeNumbers" class="inline-flex items-center justify-between w-full px-4 py-1 border-2 border-gray-200 rounded-lg cursor-pointer hover:text-gray-300 dark:border-gray-700 peer-checked:border-white peer-checked:text-gray-300 peer-checked:bg-green-600 text-gray-400 bg-white/10 hover:bg-gray-700">
+                    <div class="block">
+                      <div class="w-full text-xl font-semibold">123</div>
+                    </div>
+                  </label>
+                </div>
+                <div>
+                  <input type="checkbox" id="includeSpecial" value="" class="hidden peer" />
+                  <label for="includeSpecial" class="inline-flex items-center justify-between w-full px-4 py-1 border-2 border-gray-200 rounded-lg cursor-pointer hover:text-gray-300 dark:border-gray-700 peer-checked:border-white peer-checked:text-gray-300 peer-checked:bg-green-600 text-gray-400 bg-white/10 hover:bg-gray-700">
+                    <div class="block">
+                      <div class="w-full text-xl font-semibold">#$&</div>
+                    </div>
+                  </label>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="copy-message" class="text-white fixed z-50 bottom-10 pb-5 flex justify-center items-center text-center w-screen"></div>
+    </div>
+    <div class=" max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto pb-20  ">
+      <div class="text-center">
+        <h3 class="text-2xl text-white sm:text-4xl font-bold my-5 px-4 sm:px-6 lg:px-8"> Is this Password Generator safe to use? </h3>
+        <p class="text-gray-400 text-base">Absolutely! Our Random Password Generator utilizes mathematical entropy to craft passwords composed of numbers, letters, and symbols. The characters generated by this automated tool are completely random and do not transmit over the internet, ensuring utmost security during the password generation process. As an open-source project available on <a class="text-white" href="https://github.com/Swastikdan/Password-Generator" rel="noreferrer" target="_blank">GitHub </a>, our generator adheres to transparency and privacy. Your private password remains confidential – not even me has access to your personal information. </p>
+      </div>
+    </div>
+    <h3 class="text-center text-2xl text-white sm:text-4xl font-bold my-5 px-4 sm:px-6 lg:px-8"> What makes a password strong? </h3>
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div class="grid md:grid-cols-3 items-center gap-4 lg:gap-8">
+        <!-- Icon Block -->
+        <div class="group flex flex-col text-center items-center justify-center py-5">
+          <div class="flex justify-center items-center p-1 bg-blue-600 rounded-xl">
+            <svg class="text-white" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28.5 15.5H7.973c-.592 0-1.337.05-1.51.148-.642.272-.963.889-.963 1.852v12c0 .593.32.972.963 1.14.173.06.918.09 1.51.09H28.5m6-15.23h6.074c.42 0 .753.05 1 .148.617.272.926.889.926 1.852v12c0 .593-.309.972-.926 1.14-.247.06-.58.09-1 .09H34.5m-7-19.23c3 0 4 1 4 1m0 0v23m0-23s1-1 4-1m-4 24s-1 1-4 1m4-1s1 1 4 1m-30-7.615v3.384c0 .593.32.973.963 1.14.173.06.918.091 1.51.091h32.601c.42 0 .754-.03 1-.091.617-.167.926-.547.926-1.14v-3.384m-29-5.385a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="mt-5">
+            <h3 class="text-lg font-bold text-white">Long</h3>
+            <p class="mt-1 text-gray-400 font-thin  text-base "> The greater the length of a password, the higher its security level. An effective password should consist of a minimum of ten characters. </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+        <!-- Icon Block -->
+        <div class="group flex flex-col text-center items-center justify-center">
+          <div class="flex justify-center items-center p-1 bg-blue-600 rounded-xl">
+            <svg width="49" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.13 41.675a27.33 27.33 0 006.143-1.722m-2.4-12.551c-2.489-1.319-4.803-3.047-6.941-5.185a29.43 29.43 0 01-.415-.424m-1.898.289a27.281 27.281 0 00-4.41 11.027m.807-19.363a25.24 25.24 0 003.673 5.988m1.619.112a27.868 27.868 0 011.85-1.994c2.339-2.318 4.874-4.158 7.61-5.518m2.208.86a26.411 26.411 0 012.494 6.612m12.626.548c.326-1.384.547-2.81.664-4.28M20.232 5.763l.646.646a29.966 29.966 0 013.621 4.356m1.782.48c3.1-1.155 6.44-1.73 10.017-1.73h.323m6.839 11.513a18.138 18.138 0 00-1.496-5.087c-.94-1.923-2.216-3.712-3.833-5.372-.46-.437-.917-.864-1.375-1.277C33.326 6.43 29.296 5 24.666 5c-1.573 0-3.08.162-4.52.49-3.342.809-6.311 2.502-8.91 5.079a18.437 18.437 0 00-2.457 3.012C6.705 16.641 5.667 20.111 5.667 24c0 3.386.765 6.453 2.293 9.205.852 1.506 1.944 2.926 3.275 4.26 2.032 2.008 4.293 3.481 6.782 4.42 1.9.678 3.953 1.05 6.157 1.115h.493c.94 0 1.857-.059 2.749-.177m-3.239-29.86a1.333 1.333 0 01-.41-.976c0-.377.136-.711.41-1a1.47 1.47 0 011.003-.387c.376 0 .693.129.95.386.292.29.437.624.437 1.001 0 .378-.145.703-.438.977a1.214 1.214 0 01-.95.436c-.376 0-.71-.145-1.002-.436zm-12.133 7.965c0-.376.138-.71.412-1.002a1.38 1.38 0 01.976-.385c.376 0 .701.129.976.385.291.291.436.626.436 1.002 0 .377-.145.702-.436.977-.275.291-.6.436-.976.436-.377 0-.702-.145-.976-.436a1.339 1.339 0 01-.412-.977zm14.916 3.34l6.881-2.038c.5-.153.858-.23 1.076-.23.174 0 .521.077 1.044.23l6.848 2.038c.412.11.684.218.815.328.195.176.293.45.293.822v6.31c-.022.285-.043.558-.066.821-.282 2.213-1.26 4.24-2.934 6.08-.435.46-.816.833-1.142 1.117a23.47 23.47 0 01-2.803 2.07 8.588 8.588 0 01-.588.362c-.39.242-.804.482-1.238.723l-.294.099-.229-.099a8.243 8.243 0 01-.75-.427c-1.5-.876-2.782-1.786-3.848-2.727a7.452 7.452 0 01-.586-.592 1.146 1.146 0 00-.163-.132l-.261-.262a2.461 2.461 0 00-.228-.263c-1.044-1.162-1.805-2.388-2.283-3.681a8.212 8.212 0 01-.489-1.84 7.372 7.372 0 01-.098-1.216v-6.343c0-.372.076-.646.228-.822.152-.11.424-.219.815-.328z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="mt-5">
+            <h3 class="text-lg font-bold text-white">Complicated</h3>
+            <p class="mt-1 text-gray-400 font-thin  text-base "> Powerful passwords employ a mix of letters, digits, capitalization, and symbols to create an unforeseeable sequence of characters that bears no resemblance to words or names. </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+        <!-- Icon Block -->
+        <div class="group flex flex-col text-center items-center justify-center">
+          <div class="flex justify-center items-center p-1 bg-blue-600 rounded-xl">
+            <svg width="49" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.456 43.042l2.424-2.431c1.017-1.312 1.495-2.59 2.748-1.515 0 0 2.456 1.944 4.71 3.1m-9.615-7.366c-.187 2.883-3.627 6.013-5.108 6.96m18.584-2.901c-6.517-3.328-9.533-6.58-10.347-7.68-2.612-3.534-3.693-5.652-2.18-7.03 1.512-1.378 3.042 1.195 4.736 3.046 1.307 1.428 4.586 3.608 9.397 6.615m1.984-4.117c-3.762-1.974-9.487-7.233-10.703-8.641-2.716-3.143-6.725-2.313-9.075.107-1.871 1.93-2.003 4.703-1.14 7.13 1.634 4.6-1.236 7.311-3.406 8.632M9.48 29.808c.496-2.169.02-4.718-.147-6.376m22.928-11.32c-5.525-3.472-16.11-4.657-21.403 5.889m1.658 15.306c.92-1.11 2.017-3.002 1.557-6.87-.636-5.355 2.022-9.088 4.798-10.715 2.856-1.675 7.901-2.703 12.404 1.092 1.779 1.557 5.863 5.419 8.753 7.365m-.537-6.24c-1.143-1.08-2.898-2.274-3.779-3.348m-.699-6.151c-9.161-5.712-17.146-3.339-22.613.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <div class="mt-5">
+            <h3 class="text-lg font-bold text-white">Distinctive</h3>
+            <p class="mt-1 text-gray-400 font-thin  text-base "> For enhanced security against potential hacks, it's essential for a robust password to be distinct for every account. </p>
+          </div>
+        </div>
+        <!-- End Icon Block -->
+      </div>
+    </div>
+    <!-- End Icon Blocks -->
+    <div class="faq max-w-5xl px-4 sm:px-6 lg:px-8 mx-auto py-10">
+      <div class="faq-title text-center">
+        <h3 class="text-2xl text-white sm:text-4xl font-bold my-5 px-4 sm:px-6 lg:px-8"> Password generator FAQs </h3>
+        <h4 class="text-gray-400"> Questions about this random password generator? Answers below! </h4>
+      </div>
+      <div class="faq-all rounded-lg p-4 bg-blue-700/10 drop-shadow-lg text-white mt-10 shadow-lg shadow-white/10 ring-2 ">
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-1" data-hs-collapse="#hs-show-hide-collapse-heading-1" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> Why should I use a password generator? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-1" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse-1">
+            <p class="text-gray-300 text-xs md:text-base font-thin pt-5"> Computers swiftly guess passwords. A hacker with a regular computer can test billions of passwords in seconds. We've built an online password generator for your security. Our free tool uses a math-based algorithm to craft strong, random passwords. <br>
+              <br> People often choose weak passwords, using common elements. Computers excel at cracking such human-made passwords. For security, craft passwords with a mix of letters, numbers, and symbols. <br>
+              <br> Stay secure with Avast's password generator. Our tool combines keys for safety when accessing various accounts. We don't store data. Your device uses local math-based randomness to create the password.
+            </p>
+          </div>
+        </div>
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-2" data-hs-collapse="#hs-show-hide-collapse-heading-2" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> Do I need a unique password for every account? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-2" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse-2">
+            <p class="text-gray-300 text-xs md:text-base font-thin pt-5"> Unique passwords for each online account are crucial. If passwords are compromised in a breach, they can end up in leaked databases on the dark web. To safeguard your data, use Avast's Random Password Generator. It creates distinct passwords for every account, preventing password reuse. Simply adding characters to existing passwords is insufficient. Our generator enhances security and saves time. Don't risk your identity on the dark web. Utilize our user-friendly, free generator to thwart hackers and cybercriminals. </p>
+          </div>
+        </div>
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-3" data-hs-collapse="#hs-show-hide-collapse-heading-3" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> What are the top 10 worst passwords? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-3" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300 text-xs md:text-base" aria-labelledby="hs-show-hide-collapse-3">
+            <p class="text-gray-300  font-thin pt-5"> Here are the 10 worst passwords of the year. Common passwords show how terrible humans are at generating random characters. Use an algorithmic generator instead (like the one above)! <br>
+              <br>
+              <li class="pl-10"> 123456 </li>
+              <li class="pl-10"> Password </li>
+              <li class="pl-10"> 12345678 </li>
+              <li class="pl-10"> Qwerty </li>
+              <li class="pl-10"> 12345 </li>
+              <li class="pl-10">123456789 </li>
+              <li class="pl-10"> Letmein </li>
+              <li class="pl-10"> 1234567 </li>
+              <li class="pl-10"> Football </li>
+              <li class="pl-10"> iloveyou </li>
+              <br> Remember, human-created passwords are weak passwords. The human mind cannot compete with a server guessing billions of permutations per second.
+            </p>
+          </div>
+        </div>
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-4" data-hs-collapse="#hs-show-hide-collapse-heading-4" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> What are the requirements for a strong password? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-4" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse-4">
+            <p class="text-gray-300 text-xs md:text-base font-thin pt-5"> For a robust password, choose randomness with cryptographic entropy. Human-made passwords tend to be weak due to predictable keyboard patterns. Despite personal cleverness, hackers can crack billions of guessed passwords. Avast's password generator swiftly creates long, cryptographically secure characters, locally. Avast doesn't generate, send, receive, or store passwords. This auto generator utilizes your computer's cryptographic potency for powerful password creation. <br>
+              <br> In the pursuit of strong passwords, human attempts fall short due to predictable keyboard patterns. Mathematical entropy alone generates the needed randomness to thwart hackers. Avast's random password generator, unlike human typing, employs true randomness in symbols and characters. Guessing human-typed combinations risks password exposure, unlike Avast's generator, which leverages your computer for unguessable character strings.
+            </p>
+          </div>
+        </div>
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-5" data-hs-collapse="#hs-show-hide-collapse-heading-5" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> Is there a secure way to store passwords? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-5" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse-5">
+            <p class="text-gray-300 text-xs md:text-base font-thin pt-5"> Creating and remembering random passwords poses a challenge. Storing and recalling unique passwords for various accounts, with their mix of letters and numbers, is daunting. For a solution, consider secure storage options. Technology enables easy password management, aided by reliable password managers. However, be cautious of fraudulent sites and safeguard your password from sharing. <br>
+              <br> With numerous digital accounts like banking and gaming, managing passwords is tricky. Reusing passwords is risky. Is there a safer approach? Traditional methods involve saving passwords on a biometric USB. But this has vulnerabilities, like potential coercion. For optimal security, use password managers for encrypted storage. Their cryptography thwarts hackers from accessing passwords.
+            </p>
+          </div>
+        </div>
+        <div class="py-5 px-2">
+          <div id="hs-show-hide-collapse-6" data-hs-collapse="#hs-show-hide-collapse-heading-6" class="hs-collapse-toggle flex cursor-pointer items-center justify-between gap-1.5 group hover:text-blue-600" href="javascript:;">
+            <p class="text-xl font-bold"> What makes a password safe? </p>
+            <p class="mt-2">
+              <a class="inline-flex items-center gap-x-2 p-3 rounded-full ring-2 ring-blue-700 text-white group-hover:bg-blue-600 duration-150">
+                <span class="hs-collapse-open:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+                <span class="hs-collapse-open:block hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0 transition duration-300 rotate-45" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </a>
+            </p>
+          </div>
+          <div id="hs-show-hide-collapse-heading-6" class="hs-collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="hs-show-hide-collapse-6">
+            <p class="text-gray-300 text-xs md:text-base font-thin pt-5"> Creating strong passwords for various websites can be challenging due to the need for cryptographic complexity, which often involves mixing characters and symbols. This leads to difficulties in memorization. As a result, many individuals resort to using the same password across multiple sites, despite understanding the associated risks. <br>
+              <br> "If hacked, passwords expose your information. Avoid typing by hand due to higher security risks. Our secure password generator crafts 16+ character passwords with numbers, symbols, and uppercase letters. Don't store these in web browsers. Employ both upper and lowercase letters." <br>
+              <br> In the digital age, safeguarding your sensitive data demands unique and robust passwords for every site. Vital traits include length, mixed cases, special symbols, and numbers. To simplify this process, you can employ Avast's password generator. This tool creates incredibly strong passwords, and its user-friendly feature allows customization of length and character combinations. It operates locally, generating passwords without storing them on external servers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="btn-totopdiv flex justify-between px-10">
+      <div></div>
+      <button onclick="topFunction()" id="btn-back-to-top" title="Go to top" class="text-white px-8 py-2 ring-2 rounded-md hover:bg-white hover:text-black"> Back To Top </button>
+    </div>
+    <div id="status" class="text-white fixed z-40 bottom-10 flex justify-center items-center text-center w-screen"></div>
+    <footer class="rounded-lg shadow-gray-900 m-4 bg-gray-900">
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between ">
+          <a href="/" class="flex items-center mb-4 sm:mb-0">
+            <img src="favicon.png" class="h-8 mr-3" alt="Random Password Generator Logo" />
+            <span class="self-center md:text-2xl font-semibold whitespace-nowrap text-white">Random Password Generator</span>
+          </a>
+          <div class="flex justify-center items-center space-x-1">
+            <div class="hs-tooltip">
+              <a href="#" class="hs-tooltip-toggle inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600 ring-1">
+                <svg class="w-5 h-5 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 15 15">
+                  <path fill-rule="evenodd" d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd" />
+                  <path d="M3 5.012H0V15h3V5.012Z" />
+                </svg>
+                <span class="sr-only">Linkdin</span>
+              </a>
+              <div class=" hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible inline-block absolute invisible  z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"> Follow me on Linkdin <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+            <div class="hs-tooltip">
+              <a href="#" data-tooltip-target="tooltip-twitter" class="hs-tooltip-toggle inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600 ring-1">
+                <svg class="w-5 h-5 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z" />
+                </svg>
+                <span class="sr-only">Twitter</span>
+              </a>
+              <div class=" hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible inline-block absolute invisible  z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"> Follow me on Twitter <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+            <div class="hs-tooltip">
+              <a href="#" data-tooltip-target="tooltip-github" class="hs-tooltip-toggle inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer dark:text-gray-400 dark:hover:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-600 ring-1">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd" />
+                </svg>
+                <span class="sr-only">Github</span>
+              </a>
+              <div id="tooltip-github" role="tooltip" class=" hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible inline-block absolute invisible  z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"> Star me on GitHub <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
+        <span class="block text-sm text-center text-gray-400">© <span>
+            <span id="year"></span>
+          </span> . All Rights Reserved. &nbsp; Made with <span class="text-red-600">❤</span> By <a target=" _blank" rel="noopener noreferrer" class="hover:underline hover:underline-offset-4" href="https://www.linkedin.com/in/swastikdan" aria-label="Vsit Linkdin Profile of Swastik Dan">Swastik Dan </a>
+        </span>
+      </div>
+    </footer>
+ 
+    <script>
+        let statusElement = document.getElementById('status');
+        
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered:', registration);
+        
+                    navigator.serviceWorker.addEventListener('message', event => {
+                        if (event.data && event.data.type === 'RELOAD_PAGE') {
+                                window.location.reload();
+                                    } else if (event.data === 'Files are downloaded.') {
+                            statusElement.innerHTML = `
+                            <div id="dismiss-alert" class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-blue-50 border border-blue-200 rounded-md p-4" role="alert">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-4 w-4 text-blue-400 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="text-sm text-blue-800 font-medium">
+                                            App is ready to use Offline
+                                        </div>
+                                    </div>
+                                    <div class="pl-3 ml-auto">
+                                        <div class="-mx-1.5 -my-1.5">
+                                            <button type="button" class="inline-flex bg-blue-50 rounded-md p-1.5 text-blue-500 hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-50 focus:ring-blue-600" data-hs-remove-element="#dismiss-alert">
+                                                <span class="sr-only">Dismiss</span>
+                                                <svg class="h-3 w-3" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <path d="M0.92524 0.687069C1.126 0.486219 1.39823 0.373377 1.68209 0.373377C1.96597 0.373377 2.2382 0.486219 2.43894 0.687069L8.10514 6.35813L13.7714 0.687069C13.8701 0.584748 13.9882 0.503105 14.1188 0.446962C14.2494 0.39082 14.3899 0.361248 14.5321 0.360026C14.6742 0.358783 14.8151 0.38589 14.9468 0.439762C15.0782 0.493633 15.1977 0.573197 15.2983 0.673783C15.3987 0.774389 15.4784 0.894026 15.5321 1.02568C15.5859 1.15736 15.6131 1.29845 15.6118 1.44071C15.6105 1.58297 15.5809 1.72357 15.5248 1.85428C15.4688 1.98499 15.3872 2.10324 15.2851 2.20206L9.61883 7.87312L15.2851 13.5441C15.4801 13.7462 15.588 14.0168 15.5854 14.2977C15.5831 14.5787 15.4705 14.8474 15.272 15.046C15.0735 15.2449 14.805 15.3574 14.5244 15.3599C14.2437 15.3623 13.9733 15.2543 13.7714 15.0591L8.10514 9.38812L2.43894 15.0591C2.23704 15.2543 1.96663 15.3623 1.68594 15.3599C1.40526 15.3574 1.13677 15.2449 0.938279 15.046C0.739807 14.8474 0.627232 14.5787 0.624791 14.2977C0.62235 14.0168 0.730236 13.7462 0.92524 13.5441L6.59144 7.87312L0.92524 2.20206C0.724562 2.00115 0.611816 1.72867 0.611816 1.44457C0.611816 1.16047 0.724562 0.887983 0.92524 0.687069Z" fill="currentColor"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+        
+                            setTimeout(() => {
+                                statusElement.innerHTML = '';
+                            }, 3000);
+                        }
+                    });
+        
+                    if (navigator.serviceWorker.controller) {
+                        navigator.serviceWorker.controller.postMessage('checkDownloadStatus');
+                    }
+                })
+                .catch(err => console.error('Service Worker registration failed:', err));
+        }
+        </script>
+        
+    <script>
+    const yearElement = document.getElementById("year");
+const currentYear = new Date().getFullYear();
+yearElement.innerText = currentYear;
+let mybutton = document.getElementById("btn-back-to-top");
+
+window.onscroll = function() {
+    scrollFunction()
+};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+
+function topFunction() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/preline.js"></script>
+</body>
+
+</html>

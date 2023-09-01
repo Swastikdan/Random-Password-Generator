@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Import the custom font */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('fonts/space-grotesk-latin-700.woff2') format('woff2'),
+         url('fonts/space-grotesk-latin-700.woff') format('woff');
+  }
+
+.space-grotesk{font-family: 'Space Grotesk';}
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
+}
+.bg-green-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 122 85 / var(--tw-bg-opacity));
+}
+.bg-yellow-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 202 21 / var(--tw-bg-opacity));
+}
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 36 36 / var(--tw-bg-opacity));
+}
+#lengthButtons button:disabled {
+  opacity: 0;
+}
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+#partialPassword {
+  transition: all 0.2s ease-in-out;
+}
+#generate svg {
+  transition: transform 0.3s ease-in-out;
+}
+
