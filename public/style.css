@@ -1471,11 +1471,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   border-top-color: transparent;
 }
 
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
 .bg-blue-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(235 245 255 / var(--tw-bg-opacity));
@@ -1508,6 +1503,16 @@ input[type="range"].range-lg::-moz-range-thumb {
 .bg-gray-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+}
+
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
 .bg-teal-50 {
@@ -1653,10 +1658,6 @@ input[type="range"].range-lg::-moz-range-thumb {
   padding-bottom: 1.25rem;
 }
 
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1667,6 +1668,10 @@ input[type="range"].range-lg::-moz-range-thumb {
 
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .pt-5 {
@@ -1785,6 +1790,11 @@ input[type="range"].range-lg::-moz-range-thumb {
   color: rgb(30 66 159 / var(--tw-text-opacity));
 }
 
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
 .text-gray-300 {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -1827,6 +1837,11 @@ input[type="range"].range-lg::-moz-range-thumb {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(227 160 8 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -1945,6 +1960,8 @@ input[type="range"].range-lg::-moz-range-thumb {
 
   src: url('fonts/space-grotesk-latin-700.woff2') format('woff2'),
          url('fonts/space-grotesk-latin-700.woff') format('woff');
+
+  font-display: swap;
 }
 
 .space-grotesk{
@@ -2157,9 +2174,9 @@ input[type="range"].range-lg::-moz-range-thumb {
   background-color: rgb(5 122 85 / var(--tw-bg-opacity));
 }
 
-.peer:checked ~ .peer-checked\:text-gray-300 {
+.peer:checked ~ .peer-checked\:text-gray-100 {
   --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 .hs-removing.hs-removing\:translate-x-5 {

@@ -6,6 +6,7 @@
     font-family: 'Space Grotesk';
     src: url('fonts/space-grotesk-latin-700.woff2') format('woff2'),
          url('fonts/space-grotesk-latin-700.woff') format('woff');
+    font-display: swap; 
   }
 
 .space-grotesk{font-family: 'Space Grotesk';}
